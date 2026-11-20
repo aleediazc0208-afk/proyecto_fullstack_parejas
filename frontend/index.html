@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Fitness | Gestión de Socios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ 
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo" data-filtro="todos">
+        <i class="fa-solid fa-dumbbell"></i>
+        <span>IRON<b>FITNESS</b></span>
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+      <nav class="menu" id="menu">
+        <a href="#" data-filtro="todos" class="activo"><i class="fa-solid fa-users"></i> Socios</a>
+        <a href="#" data-filtro="activas"><i class="fa-solid fa-circle-check"></i> Membresías activas</a>
+        <a href="#" data-filtro="vencidas"><i class="fa-solid fa-circle-xmark"></i> Vencidas</a>
+        <a href="#" id="btnAfiliar" class="btn-nav"><i class="fa-solid fa-user-plus"></i> Afiliar socio</a>
+        <span id="contador" class="contador">0 socios</span>
+      </nav>
+    </div>
+  </header>
+
+ 
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Panel de socios</h1>
+        <p>Administra membresías, planes y pagos de Iron Fitness en un solo lugar.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span id="statTotal">0</span><small>Socios</small></div>
+        <div class="stat"><span id="statActivas">0</span><small>Activas</small></div>
+        <div class="stat"><span id="statVencidas">0</span><small>Vencidas</small></div>
+        <div class="stat"><span id="statIngresos">$0</span><small>Ingreso mensual</small></div>
+      </div>
+    </div>
+  </section>
+
+
+  <main class="contenido">
+    <div class="barra">
+      <h2 id="tituloVista">Todos los socios</h2>
+      <input type="search" id="buscador" placeholder="Buscar por nombre...">
+    </div>
+    <section class="grid" id="contenedor"></section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-caja" role="dialog" aria-labelledby="modalTitulo">
+      <button class="cerrar" id="cerrarModal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modalTitulo"><i class="fa-solid fa-user-plus"></i> Afiliar socio</h3>
+      <form id="formSocio">
+        <label for="cliente">Nombre del cliente</label>
+        <input type="text" id="cliente" placeholder="Ej: Carlos Ramírez" required>
+
+        <label for="plan">Plan</label>
+        <select id="plan" required>
+          <option value="Básico">Básico</option>
+          <option value="Premium">Premium</option>
+          <option value="VIP">VIP</option>
+        </select>
+
+        <label for="valor">Valor mensual (COP)</label>
+        <input type="number" id="valor" min="0" step="1000" placeholder="Ej: 80000" required>
+
+        <button type="submit" class="btn-guardar"><i class="fa-solid fa-floppy-disk"></i> Guardar socio</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="logo"><i class="fa-solid fa-dumbbell"></i> <span>IRON<b>FITNESS</b></span></div>
+        <p>Entrena fuerte. Gestiona fácil.</p>
+      </div>
+      <div>
+        <h4>Proyecto</h4>
+        <p>Taller Práctico 7 · Caso 5</p>
+        <p>ADSO · Ficha 3409609</p>
+      </div>
+      <div>
+        <h4>Tecnologías</h4>
+        <p>HTML · CSS · JavaScript</p>
+        <p>FastAPI · Motor · MongoDB</p>
+      </div>
+    </div>
+    <div class="footer-fin">
+      © 2026 Iron Fitness · Desarrollado por aprendices SENA CBA Mosquera
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
